@@ -24,4 +24,4 @@ This project is licensed under the *MIT License* - see LICENSE.md file for detai
 
 ## References & Acknowlegments
 
-- Special thanks to
+- 
