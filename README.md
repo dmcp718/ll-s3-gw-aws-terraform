@@ -1,4 +1,4 @@
-# Packer and Terraform examples for deploying S3 API gateway for LL Filespace in AWS
+## Packer and Terraform examples for deploying S3 API gateway in AWS
 Example scripts to facilitate deploying an S3 API gateway for a LL Filespace. The end result is a public S3 API endpoint (e.g., https://s3.example.net) that presents the top-level folders of a LL Filespace as S3 buckets available for a full range of S3 API calls, LIST | GET | PUT | DELETE etc.
 
 ## Prerequisites
@@ -16,8 +16,9 @@ Dependencies for deployment:
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   https://github.com/dmcp718/ll-s3-gw-aws-terraform.git
    ```
+2. 
 
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details
