@@ -72,10 +72,51 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    ```sh
    packer build ll-s3-gw.pkr.hcl
    ```
-7. Copy the resulting ami-id from the packer build, either from terminal output or ami-id. txt file. 
-8. Change to terraform directory 
+7. Copy the resulting ami_id value from the packer build, either from packer build terminal output or the post-processor script that generates the **ami_id.txt** file inside the /packer/images directory.
    ```sh
-   cd ../../terraform```
+   cat ami_id.txt
+   ami-099b66666eb33333d
+   ```
+8. Change to terraform directory and add the ami_id value to the **variable.tf** file along with the rest of the variable values for the desired deployment. Especially important are the `domain_name` that has been pre-registered in **Route 53** and the derivative `subdomain_name` value.
+   ```sh
+   cd ../../terraform
+   nano variables.tf
+   ```
+   ```sh
+   variable "instance_name" {
+   description = "Value of the Name tag for the EC2 instance"
+   type        = string
+   default     = "ll-s3-gw"
+   }
+
+   variable "instance_type" {
+   description = "Value of the EC2 instance type"
+   type        = string
+   default     = "c5.2xlarge"
+   }
+
+   variable "vpc_cidr" {
+   type    = string
+   default = "10.10.10.0/24"
+   }
+
+   variable "domain_name" {
+   type    = string
+   default = "example.net"
+   }
+
+   variable "subdomain_name" {
+   type    = string
+   default = "s3.example.net"
+   }
+
+   variable "ami_id" {
+   type    = string
+   default = "ami-099b66666eb33333d"
+   }   
+   ```
+9. Run ``terraform apply``:
+   
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details
 
