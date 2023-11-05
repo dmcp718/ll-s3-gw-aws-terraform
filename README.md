@@ -123,7 +123,7 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    ```
 10. Run ``terraform destroy`` to stop and delete all services:
     ```sh
-    terraform destory
+    terraform destroy
     ```
 > [!NOTE]
 > If you are running the ``terraform init`` on an Apple Silicon Mac, you will need to
