@@ -126,14 +126,8 @@ This template utilizes Packer to create a custom AMI with all software dependenc
     terraform destroy
     ```
 > [!NOTE]
-> If you are running the ``terraform init`` on an Apple Silicon Mac, you will need to
-> follow the steps outlined in the article:
-> https://kreuzwerker.de/en/post/use-m1-terraform-provider-helper-to-compile-terraform-providers-for-mac-m1
-> ```sh
-> brew install kreuzwerker/taps/m1-terraform-provider-helper
-> m1-terraform-provider-helper activate
-> m1-terraform-provider-helper install hashicorp/template -v v2.2.0
-> ```
+> Open a web browser and go the web console URL with your configured domain for the S3 gateway, using port :8001, e.g., ``https://console.example.net:8001``
+> Enter the MINIOROOTUSER and MINIOROOTPASSWORD values you set during the packer AMI build step to login.
 
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details

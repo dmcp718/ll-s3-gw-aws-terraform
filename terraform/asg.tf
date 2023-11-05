@@ -2,19 +2,6 @@ locals {
   solution_name = "ll-s3-gateway"
 }
 
-data "template_cloudinit_config" "this" {
-  gzip          = true
-  base64_encode = true
-
-  part {
-    filename     = "cloud_init.txt"
-    content_type = "text/x-shellscript"
-
-    content = templatefile("${path.module}/resources/bootstrap.sh.tpl", {
-    })
-  }
-}
-
 resource "aws_security_group" "this" {
   name        = "${local.solution_name}-${random_id.this.hex}"
   description = "${local.solution_name}-${random_id.this.hex}"
@@ -115,7 +102,7 @@ resource "aws_launch_template" "this" {
   name_prefix                          = "${local.solution_name}-${random_id.this.hex}"
   image_id                             = var.ami_id
   instance_type                        = var.instance_type
-  user_data                            = data.template_cloudinit_config.this.rendered
+  user_data                            = filebase64("${path.module}/resources/bootstrap.sh")
   vpc_security_group_ids               = [aws_security_group.this.id]
   instance_initiated_shutdown_behavior = "terminate"
 
