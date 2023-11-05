@@ -122,8 +122,8 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    terraform init && terraform apply
    ```
 10. Run ``terraform destroy`` to stop and delete all services:
-   ```sh
-   terraform destroy
+    ```sh
+    terraform destroy
    ```
 > [!NOTE]
 > If you are running the ``terraform init`` on an Apple Silicon Mac, you will need to
@@ -133,6 +133,7 @@ This template utilizes Packer to create a custom AMI with all software dependenc
 > brew install kreuzwerker/taps/m1-terraform-provider-helper
 > m1-terraform-provider-helper activate
 > m1-terraform-provider-helper install hashicorp/template -v v2.2.0
-> ```    
+> ```
+
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details
