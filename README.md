@@ -44,13 +44,13 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    ```
 3. Edit the packer/script/config_vars.text file:
    ```
-   FILESPACE1="<filespace.domain>"
-   FSUSER1="<username>"
-   LLPASSWD1="<password"
-   ROOTPOINT1="</>"
-   MINIOROOTUSER="<minio-root-user>"
-   MINIOROOTPASSWORD="<minio-root-password>"
-   FQDOMAIN="<example.net>"
+   FILESPACE1="filespace.domain"
+   FSUSER1="username"
+   LLPASSWD1="password"
+   ROOTPOINT1="/"
+   MINIOROOTUSER="minio-root-user"
+   MINIOROOTPASSWORD="minio-root-password"
+   FQDOMAIN="example.net"
    ```
 4. Run the ll-s3-gw_ami_build_args.sh script:
    ```sh
