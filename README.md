@@ -20,9 +20,9 @@ This template utilizes Packer to create a custom AMI with all software dependenc
 
 1. Clone the repo
    ```sh
-   https://github.com/dmcp718/ll-s3-gw-aws-terraform.git
+   git clone https://github.com/dmcp718/ll-s3-gw-aws-terraform.git
    ```
-2. The tree structure:
+2. The repo tree structure:
    ```sh
    ├── LICENSE
    ├── README.md
@@ -56,7 +56,8 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    ```sh
    cd ll-s3-gw-aws-terraform/packer/script
    sudo chmod +x ll-s3-gw_ami_build_args.sh
-   ./ll-s3-gw_ami_build_args.sh```
+   ./ll-s3-gw_ami_build_args.sh
+   ```
 5. Edit packer variables:
    ```sh
    cd ../images
@@ -67,7 +68,8 @@ This template utilizes Packer to create a custom AMI with all software dependenc
 
    instance_type = "c5.2xlarge"
 
-   filespace = "filespace-name"```
+   filespace = "filespace-name"
+   ```
 6. Run packer build:
    ```sh
    packer build ll-s3-gw.pkr.hcl
@@ -119,7 +121,3 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details
-
-## References & Acknowlegments
-
-- 
