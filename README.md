@@ -131,3 +131,12 @@ This template utilizes Packer to create a custom AMI with all software dependenc
 
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details
+
+## Acknowledgements
+This project utilizes a deprecated version of Minio S3 object storage software, operated in 'nas gateway' mode:  
+docker.io/minio/minio:RELEASE.2022-05-26T05-48-41Z  
+https://blog.min.io/deprecation-of-the-minio-gateway/
+
+Minio Sidekick load balancer software is also deployed:  
+docker.io/minio/minio/sidekick  
+https://hub.docker.com/r/minio/sidekick
