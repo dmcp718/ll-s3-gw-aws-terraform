@@ -5,7 +5,7 @@ Example scripts to facilitate deploying an S3 API gateway for a LL Filespace. Th
 
 Dependencies for deployment:
 
-1. AWS account with IAM credentials set as environmental variables.
+1. AWS account with IAM credentials set as environmental variables on the system running the scripts.
 2. Registered domain in [AWS Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/domain-register.html#register_new_console)
 3. Packer installed: [packer](https://developer.hashicorp.com/packer/tutorials/docker-get-started/get-started-install-cli)
 4. Terraform installed: [terraform](https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli)
