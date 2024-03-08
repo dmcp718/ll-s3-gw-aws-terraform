@@ -34,10 +34,11 @@ cat >../files/build_script.sh <<EOF
 set -x
 
 # Install necessary OS dependencies
-sudo apt-get update -y
+sudo echo "deb http://cz.archive.ubuntu.com/ubuntu lunar main universe" >> /etc/apt/sources.list
+sudo apt update -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-sudo apt-get update
-sudo apt-get -y -qq install curl wget git vim apt-transport-https ca-certificates xfsprogs
+sudo apt update -y
+sudo apt -y -qq install curl wget git vim apt-transport-https ca-certificates xfsprogs
 
 # Setup sudo to allow no-password sudo for "lucidlink" group and adding "lucidlink" user
 sudo groupadd -r lucidlink
