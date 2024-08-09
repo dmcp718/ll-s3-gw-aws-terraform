@@ -21,7 +21,7 @@ variable "instance_type" {
 
 variable "filespace" {
   type    = string
-  default = "production.dpfs"
+  default = "filespace.domain"
 }
 
 source "amazon-ebs" "ubuntu-minimal" {
@@ -34,7 +34,7 @@ source "amazon-ebs" "ubuntu-minimal" {
   source_ami_filter {
     filters = {
       virtualization-type = "hvm"
-      name                = "ubuntu-minimal/images/hvm-ssd-gp3/ubuntu-mantic-23.10-amd64-minimal-2024*"
+      name                = "ubuntu-minimal/images/hvm-ssd-gp3/ubuntu-*-24.04-amd64-minimal-*"
       root-device-type    = "ebs"
     }
     owners      = ["aws-marketplace"]
