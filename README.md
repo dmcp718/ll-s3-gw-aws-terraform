@@ -79,7 +79,7 @@ This template utilizes Packer to create a custom AMI with all software dependenc
    cat ami_id.txt
    ami-099b66666eb33333d
    ```
-8. Change to terraform directory and add the ami_id value to the **variable.tf** file along with the rest of the variable values for the desired deployment. Especially important are the `domain_name` that has been pre-registered in **Route 53** and the derivative `subdomain_name` value.
+8. Change to terraform directory and add the ami_id value to the **variable.tf** file along with the rest of the variable values for the desired deployment. Especially important are the `domain_name` that has been pre-registered in **Route 53** and the derivative `subdomain_name` value. The default value for `instance_type` of `c5.2xlarge` is a good starting point for a small to medium size Filespace and allocates 8 vCPUs and 16GB of memory and up to 10Gbps of network bandwidth. High volume and high throughput workflows may require larger instance types.
    ```sh
    cd ../../terraform
    nano variables.tf
