@@ -16,7 +16,7 @@ variable "region" {
 
 variable "instance_type" {
   type    = string
-  default = "c5.xlarge"
+  default = "c5.2xlarge"
 }
 
 variable "filespace" {
