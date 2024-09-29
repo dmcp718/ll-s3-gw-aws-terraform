@@ -35,10 +35,10 @@ set -x
 
 # Install necessary OS dependencies
 sudo echo "deb http://cz.archive.ubuntu.com/ubuntu lunar main universe" >> /etc/apt/sources.list
-sudo apt update -y
+sudo apt-get update -y
 sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-sudo apt update -y
-sudo apt -y -qq install curl wget git vim apt-transport-https ca-certificates xfsprogs
+sudo apt-get update -y
+sudo apt-get -y -qq install curl wget git vim apt-transport-https ca-certificates xfsprogs
 
 # Setup sudo to allow no-password sudo for "lucidlink" group and adding "lucidlink" user
 sudo groupadd -r lucidlink
@@ -51,7 +51,7 @@ echo "lucidlink  ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/lucidlink
 # Install LucidLink client and configure systemd services
 sudo mkdir /s3-gw
 sudo mkdir /s3-gw/lucid
-sudo wget -q https://www.lucidlink.com/download/latest/lin64/stable/ -O /s3-gw/lucidinstaller.deb && apt install /s3-gw/lucidinstaller.deb -y
+sudo wget -q https://www.lucidlink.com/download/latest/lin64/stable/ -O /s3-gw/lucidinstaller.deb && apt-get install /s3-gw/lucidinstaller.deb -y
 sudo wget -q https://amazoncloudwatch-agent.s3.amazonaws.com/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb -O /s3-gw/amazon-cloudwatch-agent.deb
 sudo dpkg -i -E /s3-gw/amazon-cloudwatch-agent.deb
 sudo mv /tmp/compose.yaml /s3-gw/compose.yaml
@@ -74,7 +74,7 @@ sudo chmod 400 /s3-gw/lucid/ll-password-1.cred
 sudo sed -i -e 's/#user_allow_other/user_allow_other/g' /etc/fuse.conf
 
 # Install Docker
-sudo apt -y install aptitude apt-utils apt-transport-https ca-certificates software-properties-common ca-certificates lsb-release jq nano
+sudo apt-get -y install aptitude apt-utils apt-transport-https ca-certificates software-properties-common ca-certificates lsb-release jq nano
 sudo aptitude update
 sudo aptitude install -y \
     ca-certificates \
