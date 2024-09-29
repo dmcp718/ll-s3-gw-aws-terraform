@@ -128,7 +128,7 @@ This template utilizes Packer to create a custom AMI with all software dependenc
 > [!NOTE]
 > Open a web browser and go the web console URL with your configured domain for the S3 gateway, using port :8001, e.g., ``https://console.example.net:8001``
 > Enter the MINIOROOTUSER and MINIOROOTPASSWORD values you set during the packer AMI build step to login.
-> S3 clients can access the gateway at ``https://s3.example.net`` over standard TLS/SSL port 443.
+> S3 clients can access the gateway at ``https://s3.<FQDN>`` over standard TLS/SSL port 443.
 
 ## License
 This project is licensed under the *MIT License* - see LICENSE.md file for details
