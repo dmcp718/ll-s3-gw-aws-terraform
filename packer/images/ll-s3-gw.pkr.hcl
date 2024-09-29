@@ -54,7 +54,7 @@ source "amazon-ebs" "ubuntu-minimal" {
       device_name             = "/dev/sdb"
       volume_size             = 100
       volume_type             = "gp3"
-      iops                    = 3000
+      iops                    = 12000
       throughput              = 500
   }
 }
