@@ -119,8 +119,8 @@ Group=lucidlink
 WorkingDirectory=/s3-gw/lucid
 EnvironmentFile=/s3-gw/lucid/lucidlink-service-vars1.txt
 LoadCredentialEncrypted=ll-password-1:/s3-gw/lucid/ll-password-1.cred
-ExecStart=/bin/bash -c "/usr/bin/systemd-creds cat ll-password-1 | /usr/bin/lucid --instance 501 daemon --fs \${FILESPACE1} --user \${FSUSER1} --mount-point /media/lucidlink --root-point \${ROOTPOINT1} --root-path /data --config-path /data --fuse-allow-other"
-ExecStop=/usr/bin/lucid exit
+ExecStart=/bin/bash -c "/usr/bin/systemd-creds cat ll-password-1 | /usr/bin/lucid2 --instance 501 daemon --fs \${FILESPACE1} --user \${FSUSER1} --mount-point /media/lucidlink --root-point \${ROOTPOINT1} --root-path /data --config-path /data --fuse-allow-other"
+ExecStop=/usr/bin/lucid2 exit
 [Install]
 WantedBy=multi-user.target
 EOF
