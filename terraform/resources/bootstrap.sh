@@ -27,11 +27,11 @@ else
 fi
 
 # Enable and start lucid2link service
-echo "Enabling 'systemctl enable lucid2link-1.service'"
-sudo systemctl enable lucid2link-1.service
+echo "Enabling 'systemctl enable lucidlink-1.service'"
+sudo systemctl enable lucidlink-1.service
 wait
-echo "Starting 'systemctl start lucid2link-1.service'"
-sudo systemctl start lucid2link-1.service
+echo "Starting 'systemctl start lucidlink-1.service'"
+sudo systemctl start lucidlink-1.service
 wait
 
 # Wait for lucid2link to be linked
