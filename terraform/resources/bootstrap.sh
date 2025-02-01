@@ -20,29 +20,29 @@ if [ -n "$UNFORMATTED_DEVICE" ]; then
     sudo mkfs.xfs -f $UNFORMATTED_DEVICE
     sudo mkdir -p /data
     sudo mount $UNFORMATTED_DEVICE /data
-    sudo chown -R lucidlink:lucidlink /data
+    sudo chown -R lucid2link:lucid2link /data
 else
     echo "No unformatted device found, skipping disk formatting."
     exit 1
 fi
 
-# Enable and start lucidlink service
-echo "Enabling 'systemctl enable lucidlink-1.service'"
-sudo systemctl enable lucidlink-1.service
+# Enable and start lucid2link service
+echo "Enabling 'systemctl enable lucid2link-1.service'"
+sudo systemctl enable lucid2link-1.service
 wait
-echo "Starting 'systemctl start lucidlink-1.service'"
-sudo systemctl start lucidlink-1.service
+echo "Starting 'systemctl start lucid2link-1.service'"
+sudo systemctl start lucid2link-1.service
 wait
 
-# Wait for lucidlink to be linked
-until lucid --instance 501 status | grep -qo "Linked"
+# Wait for lucid2link to be linked
+until lucid2 --instance 501 status | grep -qo "Linked"
 do
     sleep 1
 done
 sleep 1
 
 # Set DataCache size
-/usr/bin/lucid --instance 501 config --set --DataCache.Size 80G
+/usr/bin/lucid2 --instance 501 config --set --DataCache.Size 80G
 wait
 sleep 1
 
